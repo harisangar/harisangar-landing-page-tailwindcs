@@ -6,7 +6,7 @@ function Users() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const url = "https://randomuser.me/api/?results=5";
+        const url = "https://randomuser.me/api/?results=10";
     fetch(url)
       .then((response) => response.json())
       .then((json) => setData(json['results']))
@@ -22,7 +22,7 @@ function Users() {
       }, [data]);
     
   return (
-    <div className='flex mt-5 flex-wrap justify-center'>
+    <div className='sm:content-center flex mt-5 flex-wrap justify-center'>
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (

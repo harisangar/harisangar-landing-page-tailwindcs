@@ -1,12 +1,14 @@
 import React from 'react';
 import city from "./city.jpg";
-import Users from "./users"
+import { useNavigate } from "react-router-dom"
 
  function Login() {
+  const navigate= useNavigate()
   return (
+
     
     <>
-    <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
+    <div className=" md:w-32  content-center flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
 
 
       <div className="flex shadow-md rounded-3xl">
@@ -50,21 +52,25 @@ import Users from "./users"
               <span className="text-basic text-gray-400 font-semibold">Don't have account?</span>
               <a href="https://www.google.com" className="text-basic font-semibold text-purple-700">Sign up</a>
             </div>
+            <button className=" mt-5 border-2 rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500" onClick={()=>navigate('/')}>back to home page</button>
           </div>
+         
         </div>
 
 
-        <div className="flex flex-wrap content-center justify-center rounded-r-3xl" style={{
+        <div className=" lg:visible flex flex-wrap content-center justify-center rounded-r-3xl" style={{
           width: '24rem', height: '40rem'
         }}>
           <img className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-3xl" src={city} alt='img' />
         </div>
 
       </div>
+       
     </div>
-    <div className='pb-20  mx-10'>
-    <Users />
-    </div>
+    
+     
+    
+    
     </>
   );
 }
